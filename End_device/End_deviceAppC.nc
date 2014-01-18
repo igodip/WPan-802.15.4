@@ -2,6 +2,8 @@
  * @author Stefano Tennina <sota@isep.ipp.pt>
  *
  */
+#define NEW_PRINTF_SEMANTICS
+#include "printf.h"
 
 #include <Timer.h>
 #include "nwk_enumerations.h"
@@ -20,6 +22,7 @@ implementation
 	components MainC;
 	components LedsC;
 	components End_deviceC as App;
+	
 	App.Boot -> MainC;
 	App.Leds -> LedsC;
 
@@ -47,4 +50,8 @@ implementation
 	App.NLME_SYNC -> NWKC.NLME_SYNC;
 	App.NLME_GET -> NWKC.NLME_GET;
 	App.NLME_SET -> NWKC.NLME_SET;
+	
+	//Printf
+	components PrintfC;
+	components SerialStartC;
 }
