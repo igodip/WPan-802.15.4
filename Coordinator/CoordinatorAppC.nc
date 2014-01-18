@@ -2,6 +2,9 @@
 
 **/
 
+#define NEW_PRINTF_SEMANTICS
+#include "printf.h"
+
 #include "nwk_enumerations.h"
 #include "nwk_const_coordinator.h"
 
@@ -16,6 +19,9 @@ configuration CoordinatorAppC {
 implementation {
 	components MainC;
 	components CoordinatorC as App;
+	
+	components PrintfC;
+	components SerialStartC;
 
 	App.Boot -> MainC;
 

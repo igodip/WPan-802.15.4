@@ -5,13 +5,14 @@
 
 #include <Timer.h>
 #include "printfUART.h"
+#include "printf.h"
 #include "log_enable.h"
 
 #ifdef APP_PRINTFS_ENABLED
 	#define lclPrintf				printfUART
 	#define lclprintfUART_init		printfUART_init
 #else
-	#define lclPrintf(__format, __args...)
+	#define lclPrintf(FIRST,SECOND) printf(FIRST,SECOND);printfflush();
 	void lclprintfUART_init() {}
 #endif
 
