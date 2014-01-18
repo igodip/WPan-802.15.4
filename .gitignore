@@ -13,4 +13,4 @@
 *.a
 
 #Build directories
-**/build/
+**/build
