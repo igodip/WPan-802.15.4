@@ -17,7 +17,7 @@
 
 
 
-module coordinatorBasicC 
+module coordinatorC 
 {
   uses {
 	interface Boot;
